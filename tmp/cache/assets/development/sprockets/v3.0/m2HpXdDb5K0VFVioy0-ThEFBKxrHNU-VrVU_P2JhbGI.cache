@@ -1,0 +1,24 @@
+I".(function() {
+  jQuery(document).ready(function() {
+    return jQuery('.demsarcar-link').on('click', function(event) {
+      var action, button;
+      event.preventDefault();
+      button = jQuery(this);
+      action = jQuery(this).attr('href');
+      button.after(jQuery("<small class='loading'>Carregando...</small>"));
+      return jQuery.ajax({
+        type: 'patch',
+        url: action,
+        success: function(result) {
+          button.parent().find('.loading').remove();
+          return button.replaceWith("<a class='agendar-link' data-remote='true' rel='nofollow' data-method='patch' href='/agenda/agendar?id=" + result.id + "'>Reservar</a>");
+        },
+        error: function(response) {
+          return button.parent().find('.loading').remove();
+        }
+      });
+    });
+  });
+
+}).call(this);
+:ET

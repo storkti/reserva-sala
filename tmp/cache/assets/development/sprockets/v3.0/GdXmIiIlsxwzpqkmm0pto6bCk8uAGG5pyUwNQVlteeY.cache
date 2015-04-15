@@ -1,0 +1,26 @@
+I"‰(function() {
+  jQuery(document).ready(function() {
+    return jQuery('.agendar-link').on('click', function(event) {
+      var action, button;
+      event.preventDefault();
+      button = jQuery(this);
+      action = jQuery(this).attr('href');
+      button.after(jQuery("<small class='loading'>Carregando...</small>"));
+      return jQuery.ajax({
+        type: 'patch',
+        url: action,
+        success: function(result) {
+          button.parent().find('.loading').remove();
+          console.log(result);
+          return button.replaceWith('Reservado para TODO <a class="desmarcar-link" data-remote="true" rel="nofollow" data-method="patch" href="/agenda/desmarcar?id=108"><i class="fa fa-close"></i></a>');
+        },
+        error: function(response) {
+          console.log(response);
+          return button.parent().find('.loading').remove();
+        }
+      });
+    });
+  });
+
+}).call(this);
+:ET

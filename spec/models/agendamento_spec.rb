@@ -13,6 +13,6 @@ RSpec.describe Agendamento, :type => :model do
 		it { should validate_presence_of(:horario) }
 		it { should validate_inclusion_of(:horario).in_array(Agendamento::HORARIOS) }
 		it { should validate_presence_of(:dia_semana) }
-		it { should validate_inclusion_of(:dia_semana).in_array(Agendamento::DIAS) }
+		it { should validate_inclusion_of(:dia_semana).in_array(Agendamento::DIAS.keys) }
 	end
 end

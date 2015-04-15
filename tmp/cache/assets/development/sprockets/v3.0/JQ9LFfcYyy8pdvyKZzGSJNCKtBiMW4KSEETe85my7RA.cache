@@ -1,0 +1,26 @@
+I"Ù(function() {
+  jQuery(document).ready(function() {
+    return jQuery('.agendar-link').on('click', function(event) {
+      var action, button;
+      event.preventDefault();
+      button = jQuery(this);
+      action = jQuery(this).attr('href');
+      button.after(jQuery("<small class='loading'>Carregando</small>"));
+      return jQuery.ajax({
+        type: 'patch',
+        url: action,
+        success: function(result) {
+          alert('success');
+          return button.parent().find('.loading').remove();
+        },
+        error: function(response) {
+          alert(response);
+          console.log(response);
+          return button.parent().find('.loading').remove();
+        }
+      });
+    });
+  });
+
+}).call(this);
+:ET

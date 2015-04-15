@@ -1,2 +1,33 @@
-<h1>Agenda#index</h1>
-<p>Find me in app/views/agenda/index.html.erb</p>
+<h1>Reserva de Salas</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Horario</th>
+      <% Agendamento::DIAS.each do |key, dia_semana| %>
+      	<th><%= dia_semana %></th>
+      <% end %>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @agendamentos.each do |agendamento| %>
+      <% if agendamento.dia_semana == Agendamento::DIAS.keys.first %>
+      	<tr>
+      		<td><%= agendamento.horario %></td>
+      <% end %>
+
+    	<% if agendamento.user %>
+    		<td>
+    			<%= "Reservado para #{agendamento.user.email}" %>
+    			<%= link_to fa_icon(:close), desmarcar_path(id: agendamento.to_param), method: :patch, class: 'desmarcar-link', remote: true %>
+    		</td>
+    	<% else %>
+    		<td><%= link_to 'Reservar', agendar_path(id: agendamento.to_param), method: :patch, class: 'agendar-link', remote: true %></td>
+    	<% end %>
+
+      <% if agendamento.dia_semana == Agendamento::DIAS.keys.last %>
+      	</tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

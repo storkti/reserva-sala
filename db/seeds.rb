@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Agendamento::HORARIOS.each do |horario|
+	Agendamento::DIAS.keys.each do |dia_semana|
+		Agendamento.create horario: horario, dia_semana: dia_semana
+	end
+end

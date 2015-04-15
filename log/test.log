@@ -2153,3 +2153,436 @@ Completed 200 OK in 4ms (ActiveRecord: 0.9ms)
   [1m[35m (0.1ms)[0m  ROLLBACK
   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
   [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'test1@email.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test1@email.com"], ["encrypted_password", "$2a$04$in1AjB3ZZVkZXOzIL8FnyehjcbXmhyCSJaQZSyYpNOb1QyEbFxCGK"], ["created_at", "2015-04-15 18:36:43.664317"], ["updated_at", "2015-04-15 18:36:43.664317"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by AgendaController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 106]]
+  Rendered agenda/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 19ms (Views: 9.3ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test2@email.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "test2@email.com"], ["encrypted_password", "$2a$04$T9bXUywUzwdpYCP4kmDbN.kqvF1OeXeYRH7DzPGHowewrHHiV2GI2"], ["created_at", "2015-04-15 18:36:43.695938"], ["updated_at", "2015-04-15 18:36:43.695938"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test3@email.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "test3@email.com"], ["encrypted_password", "$2a$04$pWwwXmZ4MnBdwn0zt/nhW.vyrk0fHzRmMIb9KNugV5IzQDHNXE3Ri"], ["created_at", "2015-04-15 18:36:43.727503"], ["updated_at", "2015-04-15 18:36:43.727503"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test4@email.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "test4@email.com"], ["encrypted_password", "$2a$04$b2CBTBgh8gRFzJpnXaAso.K0wt75iTAh/78My.3qIA5tx1KJ.Uhbq"], ["created_at", "2015-04-15 18:36:43.741582"], ["updated_at", "2015-04-15 18:36:43.741582"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test5@email.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "test5@email.com"], ["encrypted_password", "$2a$04$6HdjZBV0FGBJb6AT84iAL.KQN0Ewhlx/pHuyjtX06Wcy0cWS6tJVG"], ["created_at", "2015-04-15 18:36:43.753031"], ["updated_at", "2015-04-15 18:36:43.753031"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test6@email.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "test6@email.com"], ["encrypted_password", "$2a$04$tyj37uAZWNw0gSv.Gu//eu6nJdNvyE/CGUeknWkZWxBc2gh2IEBaW"], ["created_at", "2015-04-15 18:36:43.758443"], ["updated_at", "2015-04-15 18:36:43.758443"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test7@email.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "test7@email.com"], ["encrypted_password", "$2a$04$b99w40cze5FuefS3tNmWO.NVM7HZmO1VAqmWWFnRlsbjsYnCGv9aO"], ["created_at", "2015-04-15 18:36:43.767050"], ["updated_at", "2015-04-15 18:36:43.767050"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test8@email.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "test8@email.com"], ["encrypted_password", "$2a$04$ZMvwkQz5LdrJmqOsfiSq9.DwW.tiv7cfjERwPzECrjHVPsZpRQmla"], ["created_at", "2015-04-15 18:36:43.772719"], ["updated_at", "2015-04-15 18:36:43.772719"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'test1@email.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test1@email.com"], ["encrypted_password", "$2a$04$g9n7oPf9.smGzGsT3u5IQ.U3KqVehSW.HV99sPIgOMbWHVAVlX..W"], ["created_at", "2015-04-15 18:37:18.616908"], ["updated_at", "2015-04-15 18:37:18.616908"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by AgendaController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 114]]
+  Rendered agenda/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 18ms (Views: 8.2ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test2@email.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "test2@email.com"], ["encrypted_password", "$2a$04$pNXVvXQPVPrWKx7MvCnDJODPxlzagWYj1/eFavTU364TSOAPRAedq"], ["created_at", "2015-04-15 18:37:18.648667"], ["updated_at", "2015-04-15 18:37:18.648667"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test3@email.com' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "test3@email.com"], ["encrypted_password", "$2a$04$KqdncLkUn2vz1yK7dC8LRukEeoNJIml1Qm4jvWXZQvfpDG7L37ea6"], ["created_at", "2015-04-15 18:37:18.684344"], ["updated_at", "2015-04-15 18:37:18.684344"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test4@email.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "test4@email.com"], ["encrypted_password", "$2a$04$9hoxB.WudKOJP9n2u95oee0kZAwprsveGhJH4tCk4SNSQsmuwvIui"], ["created_at", "2015-04-15 18:37:18.697006"], ["updated_at", "2015-04-15 18:37:18.697006"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test5@email.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "test5@email.com"], ["encrypted_password", "$2a$04$/h22EQLRhCg9EMmkcs3m9.SBXrFqzHxougMj7H9AGlGCUd1J7MjJi"], ["created_at", "2015-04-15 18:37:18.708347"], ["updated_at", "2015-04-15 18:37:18.708347"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test6@email.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "test6@email.com"], ["encrypted_password", "$2a$04$XLhpuFdcfIb4NMsZNJqAze06u4/gJ/JYgWOhv8io/rN4RgkcOKw8i"], ["created_at", "2015-04-15 18:37:18.713795"], ["updated_at", "2015-04-15 18:37:18.713795"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test7@email.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "test7@email.com"], ["encrypted_password", "$2a$04$ShpLBYPMso0Es6FVXG3B3.SOg4mv8ns1wTeYqw7zdA2lXOybJrYgW"], ["created_at", "2015-04-15 18:37:18.723695"], ["updated_at", "2015-04-15 18:37:18.723695"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test8@email.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "test8@email.com"], ["encrypted_password", "$2a$04$MuoN9NZEafigWFRU/kS5j.B6.mf80N4B2RLDoFcFnqGE1XKr5pMQq"], ["created_at", "2015-04-15 18:37:18.729048"], ["updated_at", "2015-04-15 18:37:18.729048"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'test1@email.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test1@email.com"], ["encrypted_password", "$2a$04$nxlvfTl/yU14k4z.jP9eeuwYJQMEoN9aAX/80.giEqvAR6RMmwdA."], ["created_at", "2015-04-15 18:38:18.726761"], ["updated_at", "2015-04-15 18:38:18.726761"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by AgendaController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 122]]
+  Rendered agenda/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 19ms (Views: 9.4ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test2@email.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "test2@email.com"], ["encrypted_password", "$2a$04$.mAp4ujZP0IoW4GOEh8k9eahf9WwZPcSsin94SuUorhdOG0Y/9IjC"], ["created_at", "2015-04-15 18:38:18.757898"], ["updated_at", "2015-04-15 18:38:18.757898"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "agendamentos" ("horario", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["horario", "06:00"], ["created_at", "2015-04-15 18:38:18.771320"], ["updated_at", "2015-04-15 18:38:18.771320"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by AgendaController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 123]]
+  Rendered agenda/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+  [1m[35mAgendamento Load (0.7ms)[0m  SELECT "agendamentos".* FROM "agendamentos"  ORDER BY "agendamentos"."horario" ASC, "agendamentos"."dia_semana" ASC
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'test3@email.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test3@email.com"], ["encrypted_password", "$2a$04$PUTNIl3A6izcbzu.44h0EOwWzD6E2OOaR9jLsqSAxnjMK66GNfr82"], ["created_at", "2015-04-15 18:38:18.787530"], ["updated_at", "2015-04-15 18:38:18.787530"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "agendamentos" ("horario", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["horario", "06:00"], ["created_at", "2015-04-15 18:38:18.792037"], ["updated_at", "2015-04-15 18:38:18.792037"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AgendaController#agendar as HTML
+  Parameters: {"id"=>"68"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 124]]
+  [1m[36mAgendamento Load (0.2ms)[0m  [1mSELECT  "agendamentos".* FROM "agendamentos" WHERE "agendamentos"."id" = $1 LIMIT 1[0m  [["id", 68]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "agendamentos" SET "user_id" = $1, "updated_at" = $2 WHERE "agendamentos"."id" = $3[0m  [["user_id", 124], ["updated_at", "2015-04-15 18:38:18.799591"], ["id", 68]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 8ms (ActiveRecord: 1.2ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'test4@email.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test4@email.com"], ["encrypted_password", "$2a$04$NvggDhQeSKaIVvGruPQMUeiuiqNlD.W1Jj91PKWc4sJzxA.T05ggC"], ["created_at", "2015-04-15 18:38:18.812285"], ["updated_at", "2015-04-15 18:38:18.812285"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "agendamentos" ("horario", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["horario", "06:00"], ["created_at", "2015-04-15 18:38:18.815229"], ["updated_at", "2015-04-15 18:38:18.815229"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AgendaController#agendar as HTML
+  Parameters: {"id"=>"69"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 125]]
+  [1m[36mAgendamento Load (0.2ms)[0m  [1mSELECT  "agendamentos".* FROM "agendamentos" WHERE "agendamentos"."id" = $1 LIMIT 1[0m  [["id", 69]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "agendamentos" SET "user_id" = $1, "updated_at" = $2 WHERE "agendamentos"."id" = $3[0m  [["user_id", 125], ["updated_at", "2015-04-15 18:38:18.824629"], ["id", 69]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 4ms (ActiveRecord: 1.0ms)
+  [1m[36mAgendamento Load (0.2ms)[0m  [1mSELECT  "agendamentos".* FROM "agendamentos" WHERE "agendamentos"."id" = $1 LIMIT 1[0m  [["id", 69]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 125]]
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'test5@email.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test5@email.com"], ["encrypted_password", "$2a$04$fyMmys7ihS7hE8Y0xO.Neu4x2YSMX8HwUKdV4mnBk9WHNUAXY6osS"], ["created_at", "2015-04-15 18:38:18.838149"], ["updated_at", "2015-04-15 18:38:18.838149"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'test6@email.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test6@email.com"], ["encrypted_password", "$2a$04$dd0dXlyTMG4WTa.8jIlLCekIKL6FmO05l.tHywf8SW0FQswk05uDK"], ["created_at", "2015-04-15 18:38:18.843587"], ["updated_at", "2015-04-15 18:38:18.843587"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "agendamentos" ("horario", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["horario", "06:00"], ["user_id", 127], ["created_at", "2015-04-15 18:38:18.845961"], ["updated_at", "2015-04-15 18:38:18.845961"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AgendaController#desmarcar as HTML
+  Parameters: {"id"=>"70"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 126]]
+  [1m[36mAgendamento Load (0.2ms)[0m  [1mSELECT  "agendamentos".* FROM "agendamentos" WHERE "agendamentos"."id" = $1 LIMIT 1[0m  [["id", 70]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "agendamentos" SET "user_id" = $1, "updated_at" = $2 WHERE "agendamentos"."id" = $3[0m  [["user_id", nil], ["updated_at", "2015-04-15 18:38:18.851244"], ["id", 70]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 6ms (ActiveRecord: 1.5ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'test7@email.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test7@email.com"], ["encrypted_password", "$2a$04$pSs7Gxdb.7Kkt1r1ksACOOoaNY2TrjJ8THWLA7gNvit5901aiGg6m"], ["created_at", "2015-04-15 18:38:18.860749"], ["updated_at", "2015-04-15 18:38:18.860749"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'test8@email.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test8@email.com"], ["encrypted_password", "$2a$04$MFQwpc/ezOoR7T1cstIUF.bzMYUOjiJE3qo/NhlwxqM0b6.WmEnMq"], ["created_at", "2015-04-15 18:38:18.867047"], ["updated_at", "2015-04-15 18:38:18.867047"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "agendamentos" ("horario", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["horario", "06:00"], ["user_id", 129], ["created_at", "2015-04-15 18:38:18.869833"], ["updated_at", "2015-04-15 18:38:18.869833"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AgendaController#desmarcar as HTML
+  Parameters: {"id"=>"71"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 128]]
+  [1m[36mAgendamento Load (0.2ms)[0m  [1mSELECT  "agendamentos".* FROM "agendamentos" WHERE "agendamentos"."id" = $1 LIMIT 1[0m  [["id", 71]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "agendamentos" SET "user_id" = $1, "updated_at" = $2 WHERE "agendamentos"."id" = $3[0m  [["user_id", nil], ["updated_at", "2015-04-15 18:38:18.874549"], ["id", 71]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 4ms (ActiveRecord: 0.9ms)
+  [1m[36mAgendamento Load (0.2ms)[0m  [1mSELECT  "agendamentos".* FROM "agendamentos" WHERE "agendamentos"."id" = $1 LIMIT 1[0m  [["id", 71]]
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'test1@email.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test1@email.com"], ["encrypted_password", "$2a$04$GqfKCWvrsWoBu.dCNIPL/u.oYjXeEIaEtevyljegnycsNLPeC8GXK"], ["created_at", "2015-04-15 18:38:37.952803"], ["updated_at", "2015-04-15 18:38:37.952803"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by AgendaController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 130]]
+  Rendered agenda/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 21ms (Views: 10.3ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test2@email.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "test2@email.com"], ["encrypted_password", "$2a$04$iaQgtKQeWCmjrmdLypMvm.OoiJNM1hldFyrTtZAmAa4h37HrVNc76"], ["created_at", "2015-04-15 18:38:37.985241"], ["updated_at", "2015-04-15 18:38:37.985241"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test3@email.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "test3@email.com"], ["encrypted_password", "$2a$04$vbF81.ZcV6h09iX0Pggj5OuUsDgdvEqdVypsrzP0IQlA9H5FuQXAW"], ["created_at", "2015-04-15 18:38:38.015040"], ["updated_at", "2015-04-15 18:38:38.015040"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test4@email.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "test4@email.com"], ["encrypted_password", "$2a$04$l7dlpFLoSfGiNf38ZlPX4.zQXd/5gELOFyrvQUYsWck4s50k95mm6"], ["created_at", "2015-04-15 18:38:38.026986"], ["updated_at", "2015-04-15 18:38:38.026986"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test5@email.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "test5@email.com"], ["encrypted_password", "$2a$04$HG5E0sWKLqBT5qLOZayCZOs8xiarjNaxgKqfsXRxGw6ZKxGlT7I6u"], ["created_at", "2015-04-15 18:38:38.037048"], ["updated_at", "2015-04-15 18:38:38.037048"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test6@email.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "test6@email.com"], ["encrypted_password", "$2a$04$OldscrwwbAZL6Km1na5VSetbsX4K59OhQn.9lPKCdSUYCiLNEeu3m"], ["created_at", "2015-04-15 18:38:38.042359"], ["updated_at", "2015-04-15 18:38:38.042359"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test7@email.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "test7@email.com"], ["encrypted_password", "$2a$04$XTeI5sPVtWmmTpkAaRSM3uTEIn.EIgAV/ds8sMll/F7Km.uEucdva"], ["created_at", "2015-04-15 18:38:38.052590"], ["updated_at", "2015-04-15 18:38:38.052590"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test8@email.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "test8@email.com"], ["encrypted_password", "$2a$04$iiY7MNm1XdaG9nGeIBxCp.pHAgP2KFpEsqmyZxY4Q9x2xnwLwckL2"], ["created_at", "2015-04-15 18:38:38.058015"], ["updated_at", "2015-04-15 18:38:38.058015"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'test1@email.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test1@email.com"], ["encrypted_password", "$2a$04$S4MtgJj4LoscoUsYifqSL.BlWl5sJD7gm18JNjYYMpHOumxmm6MNW"], ["created_at", "2015-04-15 18:38:58.191079"], ["updated_at", "2015-04-15 18:38:58.191079"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by AgendaController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 138]]
+  Rendered agenda/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 19ms (Views: 8.8ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test2@email.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "test2@email.com"], ["encrypted_password", "$2a$04$cN2KzGs26bDYjTOlFoHJh.lT7Xog0hT8MQiIQc6paLafh13IXrBFS"], ["created_at", "2015-04-15 18:38:58.221829"], ["updated_at", "2015-04-15 18:38:58.221829"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "agendamentos" ("dia_semana", "horario", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["dia_semana", "2"], ["horario", "06:00"], ["created_at", "2015-04-15 18:38:58.235122"], ["updated_at", "2015-04-15 18:38:58.235122"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by AgendaController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 139]]
+  Rendered agenda/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+  [1m[35mAgendamento Load (0.5ms)[0m  SELECT "agendamentos".* FROM "agendamentos"  ORDER BY "agendamentos"."horario" ASC, "agendamentos"."dia_semana" ASC
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'test3@email.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test3@email.com"], ["encrypted_password", "$2a$04$Xe24u.juTWSj8wrg67xkmecho/WX/Fj1KkUcRSlJ4zUB7fznfG/fC"], ["created_at", "2015-04-15 18:38:58.248718"], ["updated_at", "2015-04-15 18:38:58.248718"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "agendamentos" ("dia_semana", "horario", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["dia_semana", "2"], ["horario", "06:00"], ["created_at", "2015-04-15 18:38:58.251704"], ["updated_at", "2015-04-15 18:38:58.251704"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AgendaController#agendar as HTML
+  Parameters: {"id"=>"73"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 140]]
+  [1m[36mAgendamento Load (0.2ms)[0m  [1mSELECT  "agendamentos".* FROM "agendamentos" WHERE "agendamentos"."id" = $1 LIMIT 1[0m  [["id", 73]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "agendamentos" SET "user_id" = $1, "updated_at" = $2 WHERE "agendamentos"."id" = $3[0m  [["user_id", 140], ["updated_at", "2015-04-15 18:38:58.260378"], ["id", 73]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 7ms (ActiveRecord: 1.2ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'test4@email.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test4@email.com"], ["encrypted_password", "$2a$04$M7oAw8teMBoOOtEavpH0su4ZnyeEa5mxsa9Q1zHu38uRlfnFmquOu"], ["created_at", "2015-04-15 18:38:58.271743"], ["updated_at", "2015-04-15 18:38:58.271743"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "agendamentos" ("dia_semana", "horario", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["dia_semana", "2"], ["horario", "06:00"], ["created_at", "2015-04-15 18:38:58.275176"], ["updated_at", "2015-04-15 18:38:58.275176"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AgendaController#agendar as HTML
+  Parameters: {"id"=>"74"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 141]]
+  [1m[36mAgendamento Load (0.2ms)[0m  [1mSELECT  "agendamentos".* FROM "agendamentos" WHERE "agendamentos"."id" = $1 LIMIT 1[0m  [["id", 74]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "agendamentos" SET "user_id" = $1, "updated_at" = $2 WHERE "agendamentos"."id" = $3[0m  [["user_id", 141], ["updated_at", "2015-04-15 18:38:58.283211"], ["id", 74]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 5ms (ActiveRecord: 1.1ms)
+  [1m[36mAgendamento Load (0.2ms)[0m  [1mSELECT  "agendamentos".* FROM "agendamentos" WHERE "agendamentos"."id" = $1 LIMIT 1[0m  [["id", 74]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 141]]
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'test5@email.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test5@email.com"], ["encrypted_password", "$2a$04$XP7AnlQtnsLFhHhVDCvwK.oivQy6fyHr5E7qTz9eiHZVXtRKw65M2"], ["created_at", "2015-04-15 18:38:58.294628"], ["updated_at", "2015-04-15 18:38:58.294628"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'test6@email.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test6@email.com"], ["encrypted_password", "$2a$04$NC2tWB.BKl/IDlJAwvRjNOYY.F3r8iCHzQZ0KnJ2MqVeHWyUy.oVS"], ["created_at", "2015-04-15 18:38:58.302112"], ["updated_at", "2015-04-15 18:38:58.302112"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "agendamentos" ("dia_semana", "horario", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["dia_semana", "2"], ["horario", "06:00"], ["user_id", 143], ["created_at", "2015-04-15 18:38:58.304542"], ["updated_at", "2015-04-15 18:38:58.304542"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AgendaController#desmarcar as HTML
+  Parameters: {"id"=>"75"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 142]]
+  [1m[36mAgendamento Load (0.2ms)[0m  [1mSELECT  "agendamentos".* FROM "agendamentos" WHERE "agendamentos"."id" = $1 LIMIT 1[0m  [["id", 75]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "agendamentos" SET "user_id" = $1, "updated_at" = $2 WHERE "agendamentos"."id" = $3[0m  [["user_id", nil], ["updated_at", "2015-04-15 18:38:58.309869"], ["id", 75]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 4ms (ActiveRecord: 1.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'test7@email.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test7@email.com"], ["encrypted_password", "$2a$04$0lTw1yevS9TOld74.f6bA.8vX1YTczX147xbbt0EIC0K6S5983Ddq"], ["created_at", "2015-04-15 18:38:58.318323"], ["updated_at", "2015-04-15 18:38:58.318323"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'test8@email.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test8@email.com"], ["encrypted_password", "$2a$04$n9HyNPTXGMzuHnnTWNHOUOvwEzcbQMZtUTu5wqdaRu.0wk13xhGFS"], ["created_at", "2015-04-15 18:38:58.324798"], ["updated_at", "2015-04-15 18:38:58.324798"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "agendamentos" ("dia_semana", "horario", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["dia_semana", "2"], ["horario", "06:00"], ["user_id", 145], ["created_at", "2015-04-15 18:38:58.327257"], ["updated_at", "2015-04-15 18:38:58.327257"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AgendaController#desmarcar as HTML
+  Parameters: {"id"=>"76"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 144]]
+  [1m[36mAgendamento Load (0.2ms)[0m  [1mSELECT  "agendamentos".* FROM "agendamentos" WHERE "agendamentos"."id" = $1 LIMIT 1[0m  [["id", 76]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "agendamentos" SET "user_id" = $1, "updated_at" = $2 WHERE "agendamentos"."id" = $3[0m  [["user_id", nil], ["updated_at", "2015-04-15 18:38:58.332965"], ["id", 76]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 5ms (ActiveRecord: 1.0ms)
+  [1m[36mAgendamento Load (0.2ms)[0m  [1mSELECT  "agendamentos".* FROM "agendamentos" WHERE "agendamentos"."id" = $1 LIMIT 1[0m  [["id", 76]]
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK

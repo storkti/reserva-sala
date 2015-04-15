@@ -3,23 +3,17 @@ class AgendaController < ApplicationController
 	before_action :set_agendamento, only: [:agendar, :desmarcar]
 
   def index
-  	@agendamentos = Agendamento.all
+  	@agendamentos = Agendamento.order( :horario, :dia_semana )
   end
 
   def agendar
-  	if @agendamento.update user: current_user
-  		head :ok
-  	else
-  		head :not_modified
-  	end
+  	@agendamento.update user: current_user
+    render json: @agendamento, include: :user, status: :ok
   end
 
   def desmarcar
-  	if @agendamento.update user: nil
-  		head :ok
-  	else
-  		head :not_modified
-  	end
+    @agendamento.update user: nil
+    render json: @agendamento, status: :ok
   end
 
   private

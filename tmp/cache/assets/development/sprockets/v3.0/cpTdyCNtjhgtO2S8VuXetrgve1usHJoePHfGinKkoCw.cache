@@ -1,0 +1,25 @@
+I">(function() {
+  jQuery(document).ready(function() {
+    return jQuery('td').on('click', '.desmarcar-link', function(event) {
+      var action, button, td;
+      event.preventDefault();
+      button = jQuery(this);
+      action = jQuery(this).attr('href');
+      td = button.closest('td');
+      button.after(jQuery("<small class='loading'>Carregando...</small>"));
+      return jQuery.ajax({
+        type: 'patch',
+        url: action,
+        success: function(result) {
+          td.find('.loading').remove();
+          return td.empty().append("<a class='agendar-link' data-remote='true' rel='nofollow' data-method='patch' href='/agenda/agendar?id=" + result.id + "'>Reservar</a>");
+        },
+        error: function(response) {
+          return td.find('.loading').remove();
+        }
+      });
+    });
+  });
+
+}).call(this);
+:ET

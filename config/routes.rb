@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'agenda/index'
-  patch 'agenda/agendar'
-  patch 'agenda/desmarcar'
+  get 'agenda/index', as: 'agenda'
+  patch 'agenda/agendar', as: 'agendar'
+  patch 'agenda/desmarcar', as: 'desmarcar'
 
   root 'agenda#index'
 

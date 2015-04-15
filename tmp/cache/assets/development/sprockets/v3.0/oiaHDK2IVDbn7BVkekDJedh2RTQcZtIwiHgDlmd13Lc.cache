@@ -1,0 +1,26 @@
+I"›(function() {
+  jQuery(document).ready(function() {
+    return jQuery('td').on('click', '.agendar-link', function(event) {
+      var action, button, td;
+      event.preventDefault();
+      button = jQuery(this);
+      action = jQuery(this).attr('href');
+      td = button.closest('td');
+      button.after(jQuery("<small class='loading'>Carregando...</small>"));
+      return jQuery.ajax({
+        type: 'patch',
+        url: action,
+        success: function(result) {
+          td.find('.loading').remove();
+          console.log(result);
+          return td.empty().append("Reservado para " + result.user.email + " <a class='desmarcar-link' data-remote='true' rel='nofollow' data-method='patch' href='/agenda/desmarcar?id=" + result.id + "'><i class='fa fa-close'></i></a>");
+        },
+        error: function(response) {
+          return td.find('.loading').remove();
+        }
+      });
+    });
+  });
+
+}).call(this);
+:ET
