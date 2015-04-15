@@ -1,0 +1,798 @@
+pt-BR:
+  
+  states:
+    inactive: Inativo
+    active: Ativo
+    new: Novo
+    finalized: Finalizado
+    finalized_f: Finalizada
+    canceled: Cancelado
+    canceled_f: Cancelada
+    scheduled_f: Agendada
+    waiting: Aguardando
+    paid: Pago
+    partial: Parcialmente pago
+    has_access: Acesso Permitido
+    expired: Acesso Expirado
+    automatic: Automático
+    manual: Manual
+    free_period: Periodo Grátis
+    true: Sim
+    false: Não
+    missed_f: Faltou
+    missed_f_notice: com paciente ausente
+
+  plans_type:
+    month: Mensal
+    year: Anual
+
+  messages:
+    record_created: "%{model} cadastrado!"
+    record_updated: "%{model} atualizado!"
+    record_destroyed: "%{model} removido!"
+    record_created_f: "%{model} cadastrada!"
+    record_updated_f: "%{model} atualizada!"
+    record_destroyed_f: "%{model} removida!"
+    choose_plan: "Escolher Plano"
+    no_active_plan: "Nenhum plano ativo"
+    days_left: "%{days} dias restantes"
+    blank_slates_message: "Nenhum %{name} encontrado."
+    blank_slates_button_message: "Clique no botão para inserir um novo!"
+    blank_slates_message_f: "Nenhuma %{name} encontrado."
+    blank_slates_button_message_f: "Clique no botão para inserir uma nova!"
+    blank_slates_for_cash_flow: "Para inserir um novo vá até os detalhes de um tratamento ou consulta e clique em 'Adicionar Pagamento'!"
+    blank_slates_for_dashboard: "Comece cadastrando um paciente!"
+    return_to_list: "Retornar para lista de %{record}"
+    return_to_details: "Retornar para detalhes de %{record}"
+    change_state: "%{model} %{state}!"
+
+  email_types:
+    specific_date: Data Específica
+    birthday: Aniversário
+    one_year_after_last_appointment: 1 Ano Após a Última Consulta
+    one_day_before_appointment: 1 dia antes da consulta
+
+  activerecord:
+    models:
+      patient: Paciente
+      appointment: Consulta
+      treatment: Tratamento
+      cash_flow: Fluxo de Caixa
+      clinic: Clinica
+      emails: Emails
+      picture: Foto
+      feedback: Acompanhamento Clínico
+      payment_received: Pagamentos
+      professional: Profissional
+      option: Opção
+    attributes:
+      patient:
+        name: Nome
+        clinic: Clínica
+        state: Status
+        phone: Telefone
+        email: Email
+        gender: Sexo
+        birth_date: Nascimento
+        rg: RG
+        cpf: CPF
+        address: Endereço
+        occupation: Ocupação
+        picture: Foto
+        last_appointment_at: Última Consulta
+        anamnesis: Anamnese
+        cephalometry: Cefalometria
+        facial_analysis: Análise Facial
+        facial_profile: Perfil
+        observations: Observações
+        appointments: Consultas
+        treatments: Tratamentos
+        radiographic_analysis: Análise Radiografica
+        analysis_models: Análise de Modelos
+        matrial_status: Estado Civil
+        responsible: Responsável
+        home_phone: Tel. Residencial
+        business_phone: Tel. Comercial
+        cell_phone: Celular
+        uf: Estado
+        city: Cidade
+        neighborhood: Bairro
+        indication: Indicação
+        observation: Observações
+        health_plan_type: Plano de Saúde
+        health_plan_name: Nome do Convênio
+
+      clinic:
+        name: Nome
+        address: Endereço
+        phone: Telefone
+        email: Email
+        accountable: Responsável
+        professional: Profissional
+      user:
+        password: Senha
+        password_confirmation: Confirmação da Senha
+      plano:
+        amount: Valor
+        professional: Profissional
+        token: Token
+        identifier: Identificador
+        payer_id: ID do Pagador
+      professional:
+        name: Nome
+        address: Endereço
+        phone: Telefone
+        user: Usuário
+        clinics: Clínicas
+        state: Status
+        free_period_expires_on: Data de expiração periodo gratuito
+        activity_expires_on: Data de expiração priodo ativo
+        appointments: Consultas
+        patients: Pacientes
+        treatments: Tratamentos
+        plan: Plano
+        cfo: CRO
+        logo: Logo
+      email:
+        name: Nome
+        category: Categoria
+        state: Status
+        date: Data
+        hour: Hora
+        header: Título
+        body: Mensagem
+        send_type: Tipo de envio
+        professional: Professional
+        use_professional_email: Usar meu email como remetente?
+      appointment:
+        date: Data
+        begin_at: Horário Início
+        end_at: Horário Fim
+        state: Status
+        patient: Paciente
+        professional: Professional
+        clinic: Clínica
+        treatment: Tratamento
+        time: Horário
+        state: Status
+      cash_flow:
+        validity: Validade
+        paid_at: Pago em
+        value: Valor
+        clinics_percentage: Porcentagem da Clínica
+        state: Status
+        treatment: Tratamento
+        appointment: Consulta
+        professional: Profissional
+        patient: Paciente
+        observations: Observações
+      treatment:
+        begin_at: Início do Tratamento
+        goal: Estimativa do Fim do Tratamento
+        patients_complaint: Queixa Principal
+        professional: Profissional
+        patient: Paciente
+        appointments: Consultas
+        clinic: Clínica
+        pictures: Fotografias do Tratamento
+        feedbacks: Acompanhamento Clínico
+        treatment_options: Tratamentos Escolhidos
+        diagnosis_options: Diagnostico
+        state: Status
+        treatment_plan: Plano de Tratamento
+        tooth: Dente(s)
+        procedure: Procedimento
+        category: Tipo
+      procedure:
+        tooth: Dente
+        description: Procedimento
+      picture:
+        name: Nome
+        picture: Imagem
+        treatment: Tratamento
+      treatment_option:
+        treatment: Tratamento
+        option: Opção
+        value: Valor
+      diagnosis_option:
+        treatment: Tratamento
+        option: Opção
+        value: Valor
+      option:
+        number: Número
+        name: Nome
+        category: Categoria
+        has_text: Possui Texto?
+        has_text?: Possui Texto?
+        text: Texto
+      feedback:
+        description: Anotação
+        next_appointments_annotation: Anotação para próxima consulta
+      payment_received:
+        date: Data
+        value: Valor
+        payment_method: Forma de Pagamento
+        observations: Observações
+        receipt: Recibo
+
+  menu:
+    dashboard: Painel Principal
+    schedule: Agenda
+    patients: Pacientes
+    appointments: Consultas
+    treatments: Tratamentos
+    cash_flows: Fluxo de Caixa
+    clinics: Clínicas
+    emails: Emails
+    my_profile: Meu Perfil
+    edit_user: Editar Usuário
+    professionals: Profissionais
+    options: Opções
+    contact: Suporte
+
+  dashboard:
+    menu:
+      reports: Relatórios
+      patients_states: Status dos pacientes
+      payments: Pagamentos Recebidos
+      appointments: Consultas
+      diagnoses: Diagnosticos
+      treatments: Aparelhos Utilizados
+      payments_per_clinic: Pagamentos por Clínica
+      receipts_per_clinic: Recibos por Clínica
+    index:
+      dashboard: Painel Principal
+      reports: Relatórios
+      next_appointments: Próximas Consultas
+      patients: Pacientes
+      payments: Pagamentos Recebidos
+      active_treatments: Tratamentos Ativos Mais Antigos
+    patients_states:
+      dashboard: Painel Principal
+      reports: Relatórios
+      patients_states: Status dos Pacientes
+    payments:
+      dashboard: Painel Principal
+      reports: Relatórios
+      payments: Pagamentos Recebidos
+    payments_per_clinic:
+      dashboard: Painel Principal
+      reports: Relatórios
+      payments_per_clinic: Pagamentos Recebidos por Clínica
+    receipts_per_clinic:
+      dashboard: Painel Principal
+      reports: Relatórios
+      receipts_per_clinic: Contagem de Recibos por Clínica
+    appointments:
+      dashboard: Painel Principal
+      reports: Relatórios
+      appointments_states: Status das Consultas
+    treatments:
+      dashboard: Painel Principal
+      reports: Relatórios
+      treatments: Aparelhos Utilizados
+    diagnoses:
+      dashboard: Painel Principal
+      reports: Relatórios
+      diagnoses: Diagnosticos
+
+  schedule:
+    index:
+      schedule: Agenda
+      new_appointment: Nova Consulta
+
+  patients:
+    index:
+      patients: Pacientes
+      new_patient: Novo Paciente
+    new:
+      new_patient: Novo Paciente
+    form:
+      clinics_name: Nome da Nova Clínica
+      # select_existing_clinic: Selecionar uma clínica existente (IN JAVASCRIPT)
+      # add_new_clinic: Adicionar uma nova clínica (IN JAVASCRIPT)
+    edit:
+      editing_patient: Editando Paciente
+    edit_observations:
+      editing_patient: Editando Paciente
+    show:
+      patient_details: Detalhes do Paciente
+      general_information: Informações Gerais
+      profile: Perfil
+      observations: Observações
+      name: Nome
+      state: Status
+      email: Email
+      phone: Telefone
+      clinic: Clínica
+      appointments: Consultas
+      treatments: Tratamentos
+      new_appointment: Nova Consulta
+      new_treatment: Novo Tratamento
+      birth: Nascimento
+      gender: Sexo
+      address: Endereço
+      occupation: Ocupação
+      anamnesis: Anamnese
+      cephalometry: Cefalometria
+      facial_analysis: Análise Facial
+      facial_profile: Perfil Facial
+      observations: Dados Técnicos
+      observation: Observações
+      radiographic_analysis: Análise Radiografica
+      matrial_status: Estado Civil
+      responsible: Responsável
+      contact: Contato
+      home_phone: Tel. Residencial
+      business_phone: Tel. Comercial
+      cell_phone: Celular
+      first_appointment: Primeira Consulta
+      last_appointment_passed: Última Consulta
+      next_appointment: Retorno
+      uf: Estado
+      city: Cidade
+      age: Idade
+      neighborhood: Bairro
+      indication: Indicação
+      cash_flow: Fluxo de Caixa
+      credits: Saldo Credor
+      remnant_payments: Pagamentos em Aberto
+      total_remnant: Saldo Devedor
+      total_paid_value: Todal Pago
+      analysis_models: Análise de Modelos
+      health_plan: Plano de Saúde
+
+  professionals:
+    index:
+      professionals: Profissionais
+      new_professional: Novo Profissional
+    new:
+      new_professional: Novo Profissional
+    edit:
+      editing_professional: Editando Profissional
+    form:
+    show:
+      professional_details: Detalhes do Profissional
+      my_profile: Meu Perfil
+      name: Nome
+      address: Endereço
+      phone: Telefone
+      state: Status
+      expires_on: Expira em
+      access: Acesso
+      times_signed_in: Vezes logado
+      last_time_signed_in: Última vez logado
+      created_at: Cadastrado em
+      plan: Plano Escolhido
+      no_plan: Você ainda não escolheu um plano
+      no_active_plan: O seu plano não está mais ativo
+      choose_plan: Escolher um plano
+      choose_new_plan: Escolher um novo plano
+      cancel_subscription: Cancelar plano
+      value: Valor do Plano
+      begin_at: Iniciado em
+      cfo: CRO
+
+
+  appointments:
+    mark_canceled: Cancelar
+    mark_finalized: Finalizar
+    mark_scheduled: Marcar como Agendado
+    mark_missed: Paciente Faltou
+    index: 
+      appointments: Consultas
+      new_appointment: Nova Consulta
+    new:
+      new_appointment: Nova Consulta
+    edit:
+      editing_appointment: Editando Consulta
+    show:
+      appointment_details: Detalhes da Consulta
+      date: Data
+      time: Horário
+      clinic: Clínica
+      address: Endereço
+      state: Status
+      payment: Pagamento
+      patient: Paciente
+      add_payment: Adicionar Pagamento
+      no_payment_set_for_this_appointment: Nenhum pagamento configurado para esta consulta
+      appointments_on_the_same_day: Consultas no mesmo dia
+      value: Valor
+      state: Status
+      paid_at: Pago em
+      clinics_percentage: Porcentagem da Clínica
+      validity: Validade
+      paid_value: Valor Pago
+      remnant: Restante
+
+  treatments:
+    mark_active: Ativar tratamento
+    mark_inactive: Inativar tratamento
+    mark_finalized: Finalizar tratamento
+    index:
+      treatments: Tratamentos
+      new_treatment: Novo Tratamento
+    new:
+      new_treatment: Novo Tratamento
+    edit:
+      editing_treatment: Editando Tratamento
+    form:
+      diagnoses: Diagnosticos Identificados
+      treatment: Aparelhos Utilizados
+      add_treatment: Adicionar Aparelho
+      add_diagnosis: Adicionar Diagnostico
+      procedures: Procedimentos
+      add_procedure: Adicionar Procedimento
+    diagnosis_option_fields:
+      name: Nome do diagnositico
+    treatment_option_fields:
+      name: Nome do tratamento
+    show:
+      treatment_details: Detalhes do Tratamento
+      no_payment_set_for_this_treatment: Nenhum pagamento configurado para este tratamento
+      state: Status
+      begin_at: Iniciado em
+      goal: Meta
+      clinic: Clínica
+      patients_complaint: Queixa Principal
+      diagnoses: Diagnosticos
+      treatments: Tratamentos
+      value: Valor
+      paid_at: Pago em
+      clinics_percentage: Porcentagem da Clínica
+      pictures: Fotos
+      date: Data
+      image: Imagem
+      new_picture: Adicionar Foto
+      name: Nome
+      feedback: Acompanhamento Clínico
+      type: Tipo
+      description: Anotação
+      new_feedback: Adicionar Acompanhamento
+      next_appointments_annotation: Anotação para próxima consulta
+      payment: Pagamento
+      add_payment: Adicionar Pagamento
+      no_payment_set_for_this_treatment: Nenhum pagamento cadastrado
+      validity: Validade
+      paid_value: Valor Pago
+      remnant: Restante
+      diagnosis: Diagnósticos
+      appliances: Aparelhos Utilizados
+      treatment_plan: Plano de Tratamento
+      category: Tipo
+      tooth: Dente(s)
+      procedures: Procedimentos
+  
+  treatment_pictures:
+    new:
+      new_picture: Nova Foto
+
+  treatment_feedbacks:
+    new:
+      new_feedback: Novo Acompanhamento
+
+  cash_flows:
+    add_payment: Adicionar pagamento
+    index:
+      cash_flow: Fluxo de Caixa
+    new:
+      new_cash_flow: Novo Fluxo de Caixa
+    edit:
+      editing_cash_flow: Editando Fluxo de Caixa
+    show:
+      cash_flow_details: Detalhes do Fluxo de Caixa
+      value: Valor
+      state: Status
+      paid_at: Pago em
+      validity: Validade
+      clinics_percentage: Porcentagem da Clínica
+      appointment: Consulta
+      treatment: Tratamento
+      date: Data
+      clinic: Clínica
+      paid_value_total: Valor Total Pago
+      paid_value_professional: Valor Pago ao Profissional
+      remnant_total: Restante Total
+      remnant_professional: Restante para o Profissional
+      credit: Saldo Credor
+      new_payment_received: Adicionar Pagamento
+      payment_received: Pagamentos
+      observations: Observações
+
+
+  clinics:
+    index:
+      clinics: Clínicas
+      new_clinic: Nova Clínica
+    new:
+      new_clinic: Nova Clínica
+    edit:
+      editing_clinic: Editando Clínica
+    show:
+      clinic_details: Detalhes da Clínica
+      name: Nome
+      address: Endereço
+      phone: Telefone
+      email: Email
+      accountable: Responsável
+
+  emails:
+    send_email: Enviar email
+    index:
+      emails: Emails
+      new_email: Novo Email
+    new:
+      new_email: Novo Email
+    edit:
+      editing_email: Editando Email
+    show:
+      email_details: Detalhes do Email
+      name: Nome
+      category: Categoria
+      header: Título
+      body: Mensagem
+      state: Status
+      date: Data
+      send_type: Tipo
+      use_professional_email: Usar meu email como remetente
+
+  send_notifiers:
+    new:
+      sending_email: Enviar email
+      selected_patients: Selecione os Pacientes
+      send: Enviar
+    show:
+      emails_sent: Emails Enviados
+      the_following_patients_doesnt_have_email: Os seguintes pacientes não possuem email cadastrado
+      email_sent_to: "Email '%{title}' enviado para"
+
+  options:
+    index:
+      options: Opções
+      diagnostico: Diagnóstico
+      tratamento: Tratamento
+    new:
+      new_option: Nova Opção
+    edit:
+      editing_option: Editando Opção
+    show:
+      option_details: Detalhes da Opção
+      number: Número
+      name: Nome
+      category: Categoria
+      has_text: Possui Texto?
+      has_text?: Possui Texto?
+      text: Texto
+      diagnostico: Diagnóstico
+      tratamento: Tratamento
+
+  payment_receiveds:
+    index:
+      cash_flow: Fluxo de Caixa
+      send: Filtrar
+    new:
+      new_payment_received: Novo Pagamento
+
+
+  helpers:
+    select:
+      prompt: Por favor selecione
+    submit:
+      create: Criar %{model}
+      submit: Salvar %{model}
+      update: Atualizar %{model}
+    page_entries_info:
+      more_pages:
+        display_entries: Exibindo %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> de um total de <b>%{total}</b>
+      one_page:
+        display_entries:
+          one: Exibindo <b>1</b> %{entry_name}
+          other: Exibindo <b>%{count}</b> %{entry_name}
+          zero: Nenhum %{entry_name} encontrado
+  views:
+    pagination:
+      first: "&laquo; Primeiro"
+      last: "Último &raquo;"
+      next: Próximo &rsaquo;
+      previous: "&lsaquo; Anterior"
+      truncate: "&hellip;"
+
+  date:
+    abbr_day_names:
+    - Dom
+    - Seg
+    - Ter
+    - Qua
+    - Qui
+    - Sex
+    - Sáb
+    abbr_month_names:
+    -
+    - Jan
+    - Fev
+    - Mar
+    - Abr
+    - Mai
+    - Jun
+    - Jul
+    - Ago
+    - Set
+    - Out
+    - Nov
+    - Dez
+    day_names:
+    - Domingo
+    - Segunda
+    - Terça
+    - Quarta
+    - Quinta
+    - Sexta
+    - Sábado
+    formats:
+      default: ! '%d/%m/%Y'
+      long: ! '%d de %B de %Y'
+      short: ! '%d de %B'
+    month_names:
+    -
+    - Janeiro
+    - Fevereiro
+    - Março
+    - Abril
+    - Maio
+    - Junho
+    - Julho
+    - Agosto
+    - Setembro
+    - Outubro
+    - Novembro
+    - Dezembro
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: aproximadamente 1 hora
+        other: aproximadamente %{count} horas
+      about_x_months:
+        one: aproximadamente 1 mês
+        other: aproximadamente %{count} meses
+      about_x_years:
+        one: aproximadamente 1 ano
+        other: aproximadamente %{count} anos
+      almost_x_years:
+        one: quase 1 ano
+        other: quase %{count} anos
+      half_a_minute: meio minuto
+      less_than_x_minutes:
+        one: menos de um minuto
+        other: menos de %{count} minutos
+      less_than_x_seconds:
+        one: menos de 1 segundo
+        other: menos de %{count} segundos
+      over_x_years:
+        one: mais de 1 ano
+        other: mais de %{count} anos
+      x_days:
+        one: 1 dia
+        other: ! '%{count} dias'
+      x_minutes:
+        one: 1 minuto
+        other: ! '%{count} minutos'
+      x_months:
+        one: 1 mês
+        other: ! '%{count} meses'
+      x_seconds:
+        one: 1 segundo
+        other: ! '%{count} segundos'
+    prompts:
+      day: Dia
+      hour: Hora
+      minute: Minuto
+      month: Mês
+      second: Segundo
+      year: Ano
+  errors:
+    format: ! '%{attribute} %{message}'
+    messages:
+      accepted: deve ser aceito
+      blank: não pode ficar em branco
+      present: deve ficar em branco
+      confirmation: não é igual a %{attribute}
+      empty: não pode ficar vazio
+      equal_to: deve ser igual a %{count}
+      even: deve ser par
+      exclusion: não está disponível
+      greater_than: deve ser maior que %{count}
+      greater_than_or_equal_to: deve ser maior ou igual a %{count}
+      inclusion: não está incluído na lista
+      invalid: não é válido
+      less_than: deve ser menor que %{count}
+      less_than_or_equal_to: deve ser menor ou igual a %{count}
+      not_a_number: não é um número
+      not_an_integer: não é um número inteiro
+      odd: deve ser ímpar
+      record_invalid: ! 'A validação falhou: %{errors}'
+      restrict_dependent_destroy:
+        one: "Não é possível excluir o registro pois existe um %{record} dependente"
+        many: "Não é possível excluir o registro pois existem %{record} dependentes"
+      taken: já está em uso
+      too_long: ! 'é muito longo (máximo: %{count} caracteres)'
+      too_short: ! 'é muito curto (mínimo: %{count} caracteres)'
+      wrong_length: não possui o tamanho esperado (%{count} caracteres)
+      other_than: "deve ser diferente de %{count}"
+    template:
+      body: ! 'Por favor, verifique o(s) seguinte(s) campo(s):'
+      header:
+        one: ! 'Não foi possível gravar %{model}: 1 erro'
+        other: ! 'Não foi possível gravar %{model}: %{count} erros.'
+  number:
+    currency:
+      format:
+        delimiter: .
+        format: ! '%u %n'
+        precision: 2
+        separator: ! ','
+        significant: false
+        strip_insignificant_zeros: false
+        unit: R$
+    format:
+      delimiter: .
+      precision: 3
+      separator: ! ','
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n %u'
+        units:
+          billion:
+            one: bilhão
+            other: bilhões
+          million:
+            one: milhão
+            other: milhões
+          quadrillion:
+            one: quatrilhão
+            other: quatrilhões
+          thousand: mil
+          trillion:
+            one: trilhão
+            other: trilhões
+          unit: ''
+      format:
+        delimiter: .
+        precision: 2
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: .
+        format: "%n%"
+    precision:
+      format:
+        delimiter: .
+  support:
+    array:
+      last_word_connector: ! ' e '
+      two_words_connector: ! ' e '
+      words_connector: ! ', '
+  time:
+    am: ''
+    formats:
+      default: ! '%a, %d de %B de %Y, %H:%M:%S %z'
+      long: ! '%d de %B de %Y, %H:%M'
+      short: ! '%d de %B, %H:%M'
+    pm: ''

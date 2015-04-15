@@ -11103,3 +11103,159 @@ Started GET "/assets/desmarcar.self-e3df21fdaac74996887076c86ef062a4ef1b6618f9ad
 
 
 Started GET "/assets/application.self-1141abc003dc121216b7b5559c4662bc03b305da3f4d6a8c72e94a3eac480312.js?body=1" for ::1 at 2015-04-15 16:57:38 -0300
+
+
+Started GET "/" for ::1 at 2015-04-15 17:08:20 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AgendaController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mAgendamento Load (1.7ms)[0m  [1mSELECT "agendamentos".* FROM "agendamentos"  ORDER BY "agendamentos"."horario" ASC, "agendamentos"."dia_semana" ASC[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered agenda/index.html.erb within layouts/application (42.3ms)
+Completed 200 OK in 656ms (Views: 616.3ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/users/edit" for ::1 at 2015-04-15 17:08:23 -0300
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (53.7ms)
+Completed 200 OK in 231ms (Views: 225.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2015-04-15 17:08:28 -0300
+Processing by AgendaController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mAgendamento Load (1.4ms)[0m  SELECT "agendamentos".* FROM "agendamentos"  ORDER BY "agendamentos"."horario" ASC, "agendamentos"."dia_semana" ASC
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered agenda/index.html.erb within layouts/application (28.1ms)
+Completed 200 OK in 308ms (Views: 302.8ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2015-04-15 17:08:36 -0300
+Processing by AgendaController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mAgendamento Load (1.5ms)[0m  SELECT "agendamentos".* FROM "agendamentos"  ORDER BY "agendamentos"."horario" ASC, "agendamentos"."dia_semana" ASC
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered agenda/index.html.erb within layouts/application (23.6ms)
+Completed 200 OK in 174ms (Views: 169.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/font-awesome.self-2d17540bab3759939e910ca38a695f014e0c777ded3ad7a01c4658b9d3fc980d.css?body=1" for ::1 at 2015-04-15 17:08:37 -0300
+
+
+Started GET "/assets/foundation_and_overrides.self-79673e62745ed8d237e5a636e2fdbd53ceb4572f48e53413071545456f1f81e4.css?body=1" for ::1 at 2015-04-15 17:08:37 -0300
+
+
+Started GET "/assets/vendor/modernizr.self-74da3245def7569da28115667be6a85a2ad97464abe707c9829c46d8975597bc.js?body=1" for ::1 at 2015-04-15 17:08:37 -0300
+
+
+Started GET "/assets/application.self-093a1ba4c7835379d9c0cc9730c9b139dddb40b3c893e62fd3d058669151a0e6.css?body=1" for ::1 at 2015-04-15 17:08:37 -0300
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-15 17:08:37 -0300
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-15 17:08:37 -0300
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-04-15 17:08:37 -0300
+
+
+Started GET "/assets/foundation/foundation.abide.self-abbd1d12f4b07471e1d21afbc1474e47e0ca27058726132c372c324998daa097.js?body=1" for ::1 at 2015-04-15 17:08:37 -0300
+
+
+Started GET "/assets/foundation/foundation.accordion.self-cf17d392ac337bf5953a2f26af9eee35eee3455045148a35f60108e028ffdbcd.js?body=1" for ::1 at 2015-04-15 17:08:37 -0300
+
+
+Started GET "/assets/foundation/foundation.alert.self-6429073a95ade9c505d9fa9e6734009beecccab384a68e134b54aede5f3d0d25.js?body=1" for ::1 at 2015-04-15 17:08:37 -0300
+
+
+Started GET "/assets/foundation/foundation.clearing.self-ea0ff6347e6dea4e4d923e67da877ab921a4471e4312abe545f5211aac721173.js?body=1" for ::1 at 2015-04-15 17:08:37 -0300
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-04-15 17:08:37 -0300
+
+
+Started GET "/assets/foundation/foundation.equalizer.self-958ef0a1750bda14d84686a008451b05fff4b365c3d293cde663d30238a3b8aa.js?body=1" for ::1 at 2015-04-15 17:08:37 -0300
+
+
+Started GET "/assets/foundation/foundation.interchange.self-21b12f023e0306fcd4026c3b1205d09e5da090ac470c0f56dc53008cf672eab0.js?body=1" for ::1 at 2015-04-15 17:08:37 -0300
+
+
+Started GET "/assets/foundation/foundation.joyride.self-b83fb588541fa943e1f46855e00523dfca46267bf4f6c379d01274f865af9ad5.js?body=1" for ::1 at 2015-04-15 17:08:37 -0300
+
+
+Started GET "/assets/foundation/foundation.magellan.self-b624d8108443673bb2bc000ec1a7e14f8ab67f51d668d1f16efb1f22a11e9c4b.js?body=1" for ::1 at 2015-04-15 17:08:37 -0300
+
+
+Started GET "/assets/foundation/foundation.offcanvas.self-5c6d43217cbf09ab4fc78f35d4b72d488cfe65a669a3ca507462a02903426883.js?body=1" for ::1 at 2015-04-15 17:08:37 -0300
+
+
+Started GET "/assets/foundation/foundation.reveal.self-29ab6c47f5bd3598f0d7ae15e6b624fd8b08f2ce6bbe8c5e6aad373ebe26ddea.js?body=1" for ::1 at 2015-04-15 17:08:37 -0300
+
+
+Started GET "/assets/foundation/foundation.orbit.self-ec655701cf725bacabbd5a465b48037431a69a64b32c72b9a4f845393f3f85ed.js?body=1" for ::1 at 2015-04-15 17:08:37 -0300
+
+
+Started GET "/assets/foundation/foundation.slider.self-b5ee1f2d54e2200db7fe9edc3b372b640b7755af3e5942b499bdf0fb7120c374.js?body=1" for ::1 at 2015-04-15 17:08:37 -0300
+
+
+Started GET "/assets/foundation/foundation.tab.self-714a4d80908e3fe1ee585fb44937eb63345c05dcafbf199858bb3b034c95cb94.js?body=1" for ::1 at 2015-04-15 17:08:37 -0300
+
+
+Started GET "/assets/foundation/foundation.tooltip.self-0199023f742be0c4496f028919a28303e4a3499acbcf9baeb63e63bfc76cc8c4.js?body=1" for ::1 at 2015-04-15 17:08:37 -0300
+
+
+Started GET "/assets/foundation/foundation.topbar.self-7ba72b08fc9d42f50a91b7c5ef026441b78b417c50e8a85639ec324d80f0934b.js?body=1" for ::1 at 2015-04-15 17:08:37 -0300
+
+
+Started GET "/assets/foundation.self-abe4ee7a105042f73b12b1f1a28788522d2f253445a475a94ab4d6e1f7b0ec52.js?body=1" for ::1 at 2015-04-15 17:08:37 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-15 17:08:37 -0300
+
+
+Started GET "/assets/agendar.self-a145de2fa085226739ccec84c35a6da4d2cf660865197fbe9220eb83a697d43e.js?body=1" for ::1 at 2015-04-15 17:08:37 -0300
+
+
+Started GET "/assets/desmarcar.self-e3df21fdaac74996887076c86ef062a4ef1b6618f9ad802d063b07861ae043a5.js?body=1" for ::1 at 2015-04-15 17:08:37 -0300
+
+
+Started GET "/assets/application.self-1141abc003dc121216b7b5559c4662bc03b305da3f4d6a8c72e94a3eac480312.js?body=1" for ::1 at 2015-04-15 17:08:37 -0300
+
+
+Started DELETE "/users/sign_out" for ::1 at 2015-04-15 17:08:39 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"vCz5kSNGVrTRSJmH4U6x9OdVHxAfZbsWVsNJuVxFwKZ6bv7YuCLkHlsgCrrrm1yIpQ/u9zEZPM343PUYFX+q4g=="}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2015-04-15 17:08:39 -0300
+Processing by AgendaController#index as HTML
+Completed 401 Unauthorized in 4ms
+
+
+Started GET "/users/sign_in" for ::1 at 2015-04-15 17:08:39 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (9.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (28.7ms)
+Completed 200 OK in 185ms (Views: 184.1ms | ActiveRecord: 0.0ms)
