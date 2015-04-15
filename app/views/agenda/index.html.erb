@@ -18,8 +18,8 @@
 
     	<% if agendamento.user %>
     		<td>
-    			<%= "Reservado para #{agendamento.user.email}" %>
-    			<%= link_to fa_icon(:close), desmarcar_path(id: agendamento.to_param), method: :patch, class: 'desmarcar-link', remote: true %>
+    			<%= "Reservado para #{agendamento.user.nome}" %>
+    			<%= link_to fa_icon(:close), desmarcar_path(id: agendamento.to_param), method: :patch, class: 'desmarcar-link', remote: true if current_user == agendamento.user %>
     		</td>
     	<% else %>
     		<td><%= link_to 'Reservar', agendar_path(id: agendamento.to_param), method: :patch, class: 'agendar-link', remote: true %></td>

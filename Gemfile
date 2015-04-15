@@ -15,6 +15,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise', '~> 3.4.1'
 gem 'font-awesome-rails', '~> 4.3.0.0'
+gem 'foundation-rails', '~> 5.5.1.2'
 
 gem 'unicorn', '~> 4.8.3'
 

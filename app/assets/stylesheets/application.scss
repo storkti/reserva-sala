@@ -11,6 +11,16 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require foundation_and_overrides
  *= require font-awesome
  *= require_self
+
  */
+
+ table{
+ 	width: 100%;
+ }
+
+ .desmarcar-link{
+ 	color: tomato;
+ }
